@@ -38,7 +38,7 @@ body {
 //---------------------
 
 /* header container */
-#main-menu-nav {
+header {
   position: relative; /* need this to arrange items in header continer with position:absolute */ 
   height: 100px;
   width: 100%;
@@ -47,7 +47,7 @@ body {
 }
 
 /* navbar container */
-ul.main-menu-list {
+#mainmenu-navbar {
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -55,7 +55,7 @@ ul.main-menu-list {
 }
 
 /* navbar items */
-ul.main-menu-list > li {
+.main-menu.tab > li {
   list-style: none;
   display: inline-block; //horizontal nav
   position: relative; //need this for absolute positioning of submenu
@@ -71,9 +71,9 @@ ul.main-menu-list > li {
 }
 
 /* submenu container */
-li > ul { 
+.dropdown.container { 
   display: none; 
-} //hidden
+}
 
 
 //------------------
@@ -84,14 +84,14 @@ a {
   text-decoration: none; 
 }
 
-ul.main-menu-list a { 
+.main-menu.tab a { 
   color: $aqua; 
 }
 
-ul.bakery-submenu a { 
+.dropdown.container a { 
   color: $white; 
-  //font-size: 16pt;
   font-weight: 300;
+  text-transform: capitalize;
 }
 
 //-------------------
@@ -99,22 +99,22 @@ ul.bakery-submenu a {
 //-------------------
 
 /* main menu items */
-.main-menu-list > li:hover > a { 
+.main-menu.tab > li:hover > a { 
   color: $drk-aqua; 
 }
 
-/* submenu title text */
-li.submenu:hover > a { 
-  color: $lt-aqua; 
+/* submenu title */
+li.dropdown.tab:hover > a { 
+  color: $lt-aqua;
 }
 
 /* submenu title background */
-.submenu:hover { 
-  background: $drk-aqua; 
+.dropdown.tab:hover { 
+  background: $drk-aqua;
 }
 
 /* submenu container */
-.submenu:hover ul {
+.dropdown.tab:hover .dropdown.container {
   display: block;
   
   position: absolute;
@@ -127,7 +127,7 @@ li.submenu:hover > a {
 }
 
 /* submenu items */
-.submenu:hover li {
+.dropdown.tab:hover li {
   list-style: none;
   text-align: left;
   padding: $txt-pad;
@@ -135,7 +135,7 @@ li.submenu:hover > a {
 }
 
 /* submenu item highlight */
-.bakery-submenu > li:hover { 
+.dropdown.container > li:hover { 
   background: $orange; 
 }
 

@@ -15,7 +15,7 @@ body {
 }
 
 /* header container */
-#main-menu-nav {
+header {
   position: relative;
   /* need this to arrange items in header continer with position:absolute */
   height: 100px;
@@ -25,7 +25,7 @@ body {
 }
 
 /* navbar container */
-ul.main-menu-list {
+#mainmenu-navbar {
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -33,7 +33,7 @@ ul.main-menu-list {
 }
 
 /* navbar items */
-ul.main-menu-list > li {
+.main-menu.tab > li {
   list-style: none;
   display: inline-block;
   position: relative;
@@ -47,7 +47,7 @@ ul.main-menu-list > li {
 }
 
 /* submenu container */
-li > ul {
+.dropdown.container {
   display: none;
 }
 
@@ -55,32 +55,33 @@ a {
   text-decoration: none;
 }
 
-ul.main-menu-list a {
+.main-menu.tab a {
   color: #2ec4b6;
 }
 
-ul.bakery-submenu a {
+.dropdown.container a {
   color: #ffffff;
   font-weight: 300;
+  text-transform: capitalize;
 }
 
 /* main menu items */
-.main-menu-list > li:hover > a {
+.main-menu.tab > li:hover > a {
   color: #26a195;
 }
 
-/* submenu title text */
-li.submenu:hover > a {
+/* submenu title */
+li.dropdown.tab:hover > a {
   color: #cbf3f0;
 }
 
 /* submenu title background */
-.submenu:hover {
+.dropdown.tab:hover {
   background: #26a195;
 }
 
 /* submenu container */
-.submenu:hover ul {
+.dropdown.tab:hover .dropdown.container {
   display: block;
   position: absolute;
   top: 2.3em;
@@ -91,7 +92,7 @@ li.submenu:hover > a {
 }
 
 /* submenu items */
-.submenu:hover li {
+.dropdown.tab:hover li {
   list-style: none;
   text-align: left;
   padding: 0.5em;
@@ -99,7 +100,7 @@ li.submenu:hover > a {
 }
 
 /* submenu item highlight */
-.bakery-submenu > li:hover {
+.dropdown.container > li:hover {
   background: #ff9f1c;
 }
 
